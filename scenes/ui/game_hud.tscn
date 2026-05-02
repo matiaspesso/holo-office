@@ -1,9 +1,9 @@
 [gd_scene load_steps=2 format=3]
 
-[ext_resource type="Script" path="res://scripts/game_hud.gd" id="1_b7ju1"]
+[ext_resource type="Script" path="res://scripts/game_hud.gd" id="1_hud"]
 
 [node name="GameHud" type="CanvasLayer"]
-script = ExtResource("1_b7ju1")
+script = ExtResource("1_hud")
 
 [node name="Root" type="Control" parent="."]
 anchors_preset = 15
@@ -11,144 +11,286 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
-[node name="TopPanel" type="PanelContainer" parent="Root"]
-offset_left = 16.0
+[node name="TopBar" type="PanelContainer" parent="Root"]
+offset_left = 12.0
 offset_top = 12.0
-offset_right = 1264.0
-offset_bottom = 98.0
+offset_right = 420.0
+offset_bottom = 96.0
 
-[node name="TopMargin" type="MarginContainer" parent="Root/TopPanel"]
-theme_override_constants/margin_left = 12
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 12
-theme_override_constants/margin_bottom = 10
-
-[node name="TopRow" type="HBoxContainer" parent="Root/TopPanel/TopMargin"]
-theme_override_constants/separation = 18
-
-[node name="StatsBox" type="VBoxContainer" parent="Root/TopPanel/TopMargin/TopRow"]
-custom_minimum_size = Vector2(500, 0)
-
-[node name="StatsLabel" type="Label" parent="Root/TopPanel/TopMargin/TopRow/StatsBox"]
-
-[node name="TimeLabel" type="Label" parent="Root/TopPanel/TopMargin/TopRow/StatsBox"]
-
-[node name="RoomLabel" type="Label" parent="Root/TopPanel/TopMargin/TopRow/StatsBox"]
-
-[node name="InfoBox" type="VBoxContainer" parent="Root/TopPanel/TopMargin/TopRow"]
-custom_minimum_size = Vector2(220, 0)
-
-[node name="ModeLabel" type="Label" parent="Root/TopPanel/TopMargin/TopRow/InfoBox"]
-
-[node name="SelectedLabel" type="Label" parent="Root/TopPanel/TopMargin/TopRow/InfoBox"]
-
-[node name="InstructionsLabel" type="Label" parent="Root/TopPanel/TopMargin/TopRow"]
-custom_minimum_size = Vector2(450, 0)
-autowrap_mode = 3
-
-[node name="SidePanel" type="PanelContainer" parent="Root"]
-offset_left = 830.0
-offset_top = 112.0
-offset_right = 1264.0
-offset_bottom = 702.0
-
-[node name="SideMargin" type="MarginContainer" parent="Root/SidePanel"]
+[node name="TopMargin" type="MarginContainer" parent="Root/TopBar"]
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="SideColumn" type="VBoxContainer" parent="Root/SidePanel/SideMargin"]
+[node name="TopColumn" type="VBoxContainer" parent="Root/TopBar/TopMargin"]
+theme_override_constants/separation = 8
+
+[node name="TopButtons" type="HBoxContainer" parent="Root/TopBar/TopMargin/TopColumn"]
+theme_override_constants/separation = 8
+
+[node name="ResearchMenuButton" type="Button" parent="Root/TopBar/TopMargin/TopColumn/TopButtons"]
+
+[node name="RecruitMenuButton" type="Button" parent="Root/TopBar/TopMargin/TopColumn/TopButtons"]
+
+[node name="TalentMenuButton" type="Button" parent="Root/TopBar/TopMargin/TopColumn/TopButtons"]
+
+[node name="FinanceMenuButton" type="Button" parent="Root/TopBar/TopMargin/TopColumn/TopButtons"]
+
+[node name="StatsLabel" type="Label" parent="Root/TopBar/TopMargin/TopColumn"]
+autowrap_mode = 3
+
+[node name="TimeLabel" type="Label" parent="Root/TopBar/TopMargin/TopColumn"]
+
+[node name="SpeedRow" type="HBoxContainer" parent="Root/TopBar/TopMargin/TopColumn"]
+theme_override_constants/separation = 6
+
+[node name="PauseButton" type="Button" parent="Root/TopBar/TopMargin/TopColumn/SpeedRow"]
+
+[node name="Speed1Button" type="Button" parent="Root/TopBar/TopMargin/TopColumn/SpeedRow"]
+
+[node name="Speed2Button" type="Button" parent="Root/TopBar/TopMargin/TopColumn/SpeedRow"]
+
+[node name="Speed3Button" type="Button" parent="Root/TopBar/TopMargin/TopColumn/SpeedRow"]
+
+[node name="Speed4Button" type="Button" parent="Root/TopBar/TopMargin/TopColumn/SpeedRow"]
+
+[node name="ContextPanel" type="PanelContainer" parent="Root"]
+offset_left = 1000.0
+offset_top = 12.0
+offset_right = 1268.0
+offset_bottom = 220.0
+
+[node name="ContextMargin" type="MarginContainer" parent="Root/ContextPanel"]
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ContextColumn" type="VBoxContainer" parent="Root/ContextPanel/ContextMargin"]
+theme_override_constants/separation = 6
+
+[node name="ContextTitle" type="Label" parent="Root/ContextPanel/ContextMargin/ContextColumn"]
+theme_override_font_sizes/font_size = 18
+
+[node name="ContextBody" type="Label" parent="Root/ContextPanel/ContextMargin/ContextColumn"]
+autowrap_mode = 3
+
+[node name="BottomBar" type="PanelContainer" parent="Root"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 120.0
+offset_top = -164.0
+offset_right = -120.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="BottomMargin" type="MarginContainer" parent="Root/BottomBar"]
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="BottomColumn" type="VBoxContainer" parent="Root/BottomBar/BottomMargin"]
 theme_override_constants/separation = 10
 
-[node name="BuildSection" type="VBoxContainer" parent="Root/SidePanel/SideMargin/SideColumn"]
-theme_override_constants/separation = 6
+[node name="TabButtons" type="HBoxContainer" parent="Root/BottomBar/BottomMargin/BottomColumn"]
+theme_override_constants/separation = 8
 
-[node name="BuildTitle" type="Label" parent="Root/SidePanel/SideMargin/SideColumn/BuildSection"]
-theme_override_font_sizes/font_size = 17
+[node name="AreasTabButton" type="Button" parent="Root/BottomBar/BottomMargin/BottomColumn/TabButtons"]
 
-[node name="BuildGrid" type="GridContainer" parent="Root/SidePanel/SideMargin/SideColumn/BuildSection"]
-columns = 2
-theme_override_constants/h_separation = 6
-theme_override_constants/v_separation = 6
+[node name="StructuresTabButton" type="Button" parent="Root/BottomBar/BottomMargin/BottomColumn/TabButtons"]
 
-[node name="WallButton" type="Button" parent="Root/SidePanel/SideMargin/SideColumn/BuildSection/BuildGrid"]
+[node name="FurnitureTabButton" type="Button" parent="Root/BottomBar/BottomMargin/BottomColumn/TabButtons"]
 
-[node name="DoorButton" type="Button" parent="Root/SidePanel/SideMargin/SideColumn/BuildSection/BuildGrid"]
+[node name="TabContent" type="MarginContainer" parent="Root/BottomBar/BottomMargin/BottomColumn"]
+custom_minimum_size = Vector2(0, 70)
 
-[node name="FloorButton" type="Button" parent="Root/SidePanel/SideMargin/SideColumn/BuildSection/BuildGrid"]
+[node name="AreasRow" type="HBoxContainer" parent="Root/BottomBar/BottomMargin/BottomColumn/TabContent"]
+theme_override_constants/separation = 8
 
-[node name="EraseButton" type="Button" parent="Root/SidePanel/SideMargin/SideColumn/BuildSection/BuildGrid"]
+[node name="OfficeButton" type="Button" parent="Root/BottomBar/BottomMargin/BottomColumn/TabContent/AreasRow"]
 
-[node name="OfficeButton" type="Button" parent="Root/SidePanel/SideMargin/SideColumn/BuildSection/BuildGrid"]
+[node name="BathroomButton" type="Button" parent="Root/BottomBar/BottomMargin/BottomColumn/TabContent/AreasRow"]
 
-[node name="BathroomButton" type="Button" parent="Root/SidePanel/SideMargin/SideColumn/BuildSection/BuildGrid"]
+[node name="StorageButton" type="Button" parent="Root/BottomBar/BottomMargin/BottomColumn/TabContent/AreasRow"]
 
-[node name="StorageButton" type="Button" parent="Root/SidePanel/SideMargin/SideColumn/BuildSection/BuildGrid"]
+[node name="ShopButton" type="Button" parent="Root/BottomBar/BottomMargin/BottomColumn/TabContent/AreasRow"]
 
-[node name="TimeRow" type="HBoxContainer" parent="Root/SidePanel/SideMargin/SideColumn/BuildSection"]
-theme_override_constants/separation = 6
+[node name="RecordingBoothButton" type="Button" parent="Root/BottomBar/BottomMargin/BottomColumn/TabContent/AreasRow"]
 
-[node name="PauseButton" type="Button" parent="Root/SidePanel/SideMargin/SideColumn/BuildSection/TimeRow"]
+[node name="ClearAreaButton" type="Button" parent="Root/BottomBar/BottomMargin/BottomColumn/TabContent/AreasRow"]
 
-[node name="SpeedButton" type="Button" parent="Root/SidePanel/SideMargin/SideColumn/BuildSection/TimeRow"]
+[node name="StructuresRow" type="HBoxContainer" parent="Root/BottomBar/BottomMargin/BottomColumn/TabContent"]
+visible = false
+theme_override_constants/separation = 8
 
-[node name="StaffSection" type="VBoxContainer" parent="Root/SidePanel/SideMargin/SideColumn"]
-theme_override_constants/separation = 6
+[node name="WallButton" type="Button" parent="Root/BottomBar/BottomMargin/BottomColumn/TabContent/StructuresRow"]
 
-[node name="StaffTitle" type="Label" parent="Root/SidePanel/SideMargin/SideColumn/StaffSection"]
-theme_override_font_sizes/font_size = 17
+[node name="DoorButton" type="Button" parent="Root/BottomBar/BottomMargin/BottomColumn/TabContent/StructuresRow"]
 
-[node name="WorkerOfferLabel" type="Label" parent="Root/SidePanel/SideMargin/SideColumn/StaffSection"]
+[node name="FloorButton" type="Button" parent="Root/BottomBar/BottomMargin/BottomColumn/TabContent/StructuresRow"]
+
+[node name="EraseButton" type="Button" parent="Root/BottomBar/BottomMargin/BottomColumn/TabContent/StructuresRow"]
+
+[node name="FurnitureRow" type="HBoxContainer" parent="Root/BottomBar/BottomMargin/BottomColumn/TabContent"]
+visible = false
+theme_override_constants/separation = 8
+
+[node name="ChairButton" type="Button" parent="Root/BottomBar/BottomMargin/BottomColumn/TabContent/FurnitureRow"]
+
+[node name="TableButton" type="Button" parent="Root/BottomBar/BottomMargin/BottomColumn/TabContent/FurnitureRow"]
+
+[node name="WallPadButton" type="Button" parent="Root/BottomBar/BottomMargin/BottomColumn/TabContent/FurnitureRow"]
+
+[node name="ShelfButton" type="Button" parent="Root/BottomBar/BottomMargin/BottomColumn/TabContent/FurnitureRow"]
+
+[node name="DropPointButton" type="Button" parent="Root/BottomBar/BottomMargin/BottomColumn/TabContent/FurnitureRow"]
+
+[node name="CheckoutButton" type="Button" parent="Root/BottomBar/BottomMargin/BottomColumn/TabContent/FurnitureRow"]
+
+[node name="ResearchWindow" type="PanelContainer" parent="Root"]
+visible = false
+offset_left = 340.0
+offset_top = 110.0
+offset_right = 940.0
+offset_bottom = 430.0
+
+[node name="ResearchMargin" type="MarginContainer" parent="Root/ResearchWindow"]
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="ResearchColumn" type="VBoxContainer" parent="Root/ResearchWindow/ResearchMargin"]
+theme_override_constants/separation = 8
+
+[node name="ResearchTitle" type="Label" parent="Root/ResearchWindow/ResearchMargin/ResearchColumn"]
+theme_override_font_sizes/font_size = 20
+
+[node name="ResearchDescription" type="Label" parent="Root/ResearchWindow/ResearchMargin/ResearchColumn"]
 autowrap_mode = 3
 
-[node name="HireWorkerButton" type="Button" parent="Root/SidePanel/SideMargin/SideColumn/StaffSection"]
+[node name="ResearchProgressBar" type="ProgressBar" parent="Root/ResearchWindow/ResearchMargin/ResearchColumn"]
+max_value = 100.0
 
-[node name="TalentOfferLabel" type="Label" parent="Root/SidePanel/SideMargin/SideColumn/StaffSection"]
+[node name="ResearchProgressLabel" type="Label" parent="Root/ResearchWindow/ResearchMargin/ResearchColumn"]
+
+[node name="ResearchButtons" type="HBoxContainer" parent="Root/ResearchWindow/ResearchMargin/ResearchColumn"]
+theme_override_constants/separation = 8
+
+[node name="StartResearchButton" type="Button" parent="Root/ResearchWindow/ResearchMargin/ResearchColumn/ResearchButtons"]
+
+[node name="CloseResearchButton" type="Button" parent="Root/ResearchWindow/ResearchMargin/ResearchColumn/ResearchButtons"]
+
+[node name="RecruitWindow" type="PanelContainer" parent="Root"]
+visible = false
+offset_left = 300.0
+offset_top = 100.0
+offset_right = 980.0
+offset_bottom = 520.0
+
+[node name="RecruitMargin" type="MarginContainer" parent="Root/RecruitWindow"]
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="RecruitColumn" type="VBoxContainer" parent="Root/RecruitWindow/RecruitMargin"]
+theme_override_constants/separation = 10
+
+[node name="RecruitTitle" type="Label" parent="Root/RecruitWindow/RecruitMargin/RecruitColumn"]
+theme_override_font_sizes/font_size = 20
+
+[node name="RecruitRoleButtons" type="HBoxContainer" parent="Root/RecruitWindow/RecruitMargin/RecruitColumn"]
+theme_override_constants/separation = 8
+
+[node name="ResearcherRoleButton" type="Button" parent="Root/RecruitWindow/RecruitMargin/RecruitColumn/RecruitRoleButtons"]
+
+[node name="JanitorRoleButton" type="Button" parent="Root/RecruitWindow/RecruitMargin/RecruitColumn/RecruitRoleButtons"]
+
+[node name="BuilderRoleButton" type="Button" parent="Root/RecruitWindow/RecruitMargin/RecruitColumn/RecruitRoleButtons"]
+
+[node name="StaffRoleButton" type="Button" parent="Root/RecruitWindow/RecruitMargin/RecruitColumn/RecruitRoleButtons"]
+
+[node name="CashierRoleButton" type="Button" parent="Root/RecruitWindow/RecruitMargin/RecruitColumn/RecruitRoleButtons"]
+
+[node name="RecruitInfoLabel" type="Label" parent="Root/RecruitWindow/RecruitMargin/RecruitColumn"]
 autowrap_mode = 3
 
-[node name="HireTalentButton" type="Button" parent="Root/SidePanel/SideMargin/SideColumn/StaffSection"]
+[node name="CandidateButtons" type="VBoxContainer" parent="Root/RecruitWindow/RecruitMargin/RecruitColumn"]
+theme_override_constants/separation = 8
 
-[node name="AssignmentSection" type="VBoxContainer" parent="Root/SidePanel/SideMargin/SideColumn"]
-theme_override_constants/separation = 6
+[node name="CandidateButton0" type="Button" parent="Root/RecruitWindow/RecruitMargin/RecruitColumn/CandidateButtons"]
 
-[node name="AssignmentTitle" type="Label" parent="Root/SidePanel/SideMargin/SideColumn/AssignmentSection"]
-theme_override_font_sizes/font_size = 17
+[node name="CandidateButton1" type="Button" parent="Root/RecruitWindow/RecruitMargin/RecruitColumn/CandidateButtons"]
 
-[node name="StreamButton" type="Button" parent="Root/SidePanel/SideMargin/SideColumn/AssignmentSection"]
+[node name="CandidateButton2" type="Button" parent="Root/RecruitWindow/RecruitMargin/RecruitColumn/CandidateButtons"]
 
-[node name="ConcertButton" type="Button" parent="Root/SidePanel/SideMargin/SideColumn/AssignmentSection"]
+[node name="CloseRecruitButton" type="Button" parent="Root/RecruitWindow/RecruitMargin/RecruitColumn"]
 
-[node name="MerchButton" type="Button" parent="Root/SidePanel/SideMargin/SideColumn/AssignmentSection"]
+[node name="TalentWindow" type="PanelContainer" parent="Root"]
+visible = false
+offset_left = 320.0
+offset_top = 120.0
+offset_right = 1000.0
+offset_bottom = 520.0
 
-[node name="IdleButton" type="Button" parent="Root/SidePanel/SideMargin/SideColumn/AssignmentSection"]
+[node name="TalentMargin" type="MarginContainer" parent="Root/TalentWindow"]
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
 
-[node name="LanguageSection" type="VBoxContainer" parent="Root/SidePanel/SideMargin/SideColumn"]
-theme_override_constants/separation = 6
+[node name="TalentColumn" type="VBoxContainer" parent="Root/TalentWindow/TalentMargin"]
+theme_override_constants/separation = 10
 
-[node name="LanguageTitle" type="Label" parent="Root/SidePanel/SideMargin/SideColumn/LanguageSection"]
-theme_override_font_sizes/font_size = 17
+[node name="TalentTitle" type="Label" parent="Root/TalentWindow/TalentMargin/TalentColumn"]
+theme_override_font_sizes/font_size = 20
 
-[node name="LanguageRow" type="HBoxContainer" parent="Root/SidePanel/SideMargin/SideColumn/LanguageSection"]
-theme_override_constants/separation = 6
+[node name="TalentInfoLabel" type="Label" parent="Root/TalentWindow/TalentMargin/TalentColumn"]
+autowrap_mode = 3
 
-[node name="EnglishButton" type="Button" parent="Root/SidePanel/SideMargin/SideColumn/LanguageSection/LanguageRow"]
-text = "English"
+[node name="TalentCandidateButtons" type="VBoxContainer" parent="Root/TalentWindow/TalentMargin/TalentColumn"]
+theme_override_constants/separation = 8
 
-[node name="SpanishButton" type="Button" parent="Root/SidePanel/SideMargin/SideColumn/LanguageSection/LanguageRow"]
-text = "Español"
+[node name="TalentCandidateButton0" type="Button" parent="Root/TalentWindow/TalentMargin/TalentColumn/TalentCandidateButtons"]
 
-[node name="JapaneseButton" type="Button" parent="Root/SidePanel/SideMargin/SideColumn/LanguageSection/LanguageRow"]
-text = "日本語"
+[node name="TalentCandidateButton1" type="Button" parent="Root/TalentWindow/TalentMargin/TalentColumn/TalentCandidateButtons"]
 
-[node name="LogSection" type="VBoxContainer" parent="Root/SidePanel/SideMargin/SideColumn"]
-theme_override_constants/separation = 6
+[node name="TalentCandidateButton2" type="Button" parent="Root/TalentWindow/TalentMargin/TalentColumn/TalentCandidateButtons"]
 
-[node name="LogTitle" type="Label" parent="Root/SidePanel/SideMargin/SideColumn/LogSection"]
-theme_override_font_sizes/font_size = 17
+[node name="CloseTalentButton" type="Button" parent="Root/TalentWindow/TalentMargin/TalentColumn"]
 
-[node name="LogsLabel" type="RichTextLabel" parent="Root/SidePanel/SideMargin/SideColumn/LogSection"]
-custom_minimum_size = Vector2(0, 180)
-fit_content = true
-bbcode_enabled = true
+[node name="TalentContextMenu" type="PopupMenu" parent="Root"]
+
+[node name="AreaContextMenu" type="PopupMenu" parent="Root"]
+
+[node name="FinanceWindow" type="PanelContainer" parent="Root"]
+visible = false
+offset_left = 340.0
+offset_top = 110.0
+offset_right = 940.0
+offset_bottom = 470.0
+
+[node name="FinanceMargin" type="MarginContainer" parent="Root/FinanceWindow"]
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="FinanceColumn" type="VBoxContainer" parent="Root/FinanceWindow/FinanceMargin"]
+theme_override_constants/separation = 10
+
+[node name="FinanceTitle" type="Label" parent="Root/FinanceWindow/FinanceMargin/FinanceColumn"]
+theme_override_font_sizes/font_size = 20
+
+[node name="FinanceBody" type="Label" parent="Root/FinanceWindow/FinanceMargin/FinanceColumn"]
+autowrap_mode = 3
+
+[node name="CloseFinanceButton" type="Button" parent="Root/FinanceWindow/FinanceMargin/FinanceColumn"]

@@ -7,6 +7,10 @@
 [node name="Main" type="Node2D"]
 script = ExtResource("1_mgqk4")
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(384, 288)
+enabled = true
+
 [node name="GameWorld" parent="." instance=ExtResource("2_laud4")]
 
 [node name="GameHud" parent="." instance=ExtResource("3_t0ll1")]
