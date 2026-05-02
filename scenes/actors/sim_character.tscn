@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/sim_character.gd" id="1_1l5lm"]
+
+[node name="SimCharacter" type="Node2D"]
+script = ExtResource("1_1l5lm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="NameLabel" type="Label" parent="."]
+offset_left = -44.0
+offset_top = 26.0
+offset_right = 44.0
+offset_bottom = 48.0
+horizontal_alignment = 1
+vertical_alignment = 1
+theme_override_font_sizes/font_size = 12

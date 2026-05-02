@@ -1,6 +1,9 @@
 extends Node2D
 class_name SimCharacter
 
+@onready var sprite: Sprite2D = $Sprite2D
+@onready var label: Label = $NameLabel
+
 var character_name := ""
 var character_kind := ""
 var role_key := ""
@@ -9,30 +12,8 @@ var target_position := Vector2.ZERO
 var move_speed := 48.0
 var selected := false
 
-var sprite: Sprite2D
-var label: Label
-
-
-func _ready() -> void:
-	_ensure_nodes()
-
-
-func _ensure_nodes() -> void:
-	if sprite != null:
-		return
-	sprite = Sprite2D.new()
-	label = Label.new()
-	add_child(sprite)
-	add_child(label)
-	label.position = Vector2(-44, 26)
-	label.size = Vector2(88, 22)
-	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
-	label.add_theme_font_size_override("font_size", 12)
-
 
 func configure(display_name: String, kind: String, texture: Texture2D, label_color: Color) -> void:
-	_ensure_nodes()
 	character_name = display_name
 	character_kind = kind
 	sprite.texture = texture

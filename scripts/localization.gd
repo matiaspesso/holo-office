@@ -1,4 +1,5 @@
 extends RefCounted
+class_name HoloLocalization
 
 var current_locale := "es"
 
@@ -242,7 +243,7 @@ func set_locale(locale_code: String) -> void:
 		current_locale = locale_code
 
 
-func tr(key: String, replacements: Dictionary = {}) -> String:
+func translate_key(key: String, replacements: Dictionary = {}) -> String:
 	var locale_table: Dictionary = TRANSLATIONS.get(current_locale, TRANSLATIONS["en"])
 	var template: String = locale_table.get(key, TRANSLATIONS["en"].get(key, key))
 	for replacement_key in replacements.keys():

@@ -11,6 +11,13 @@ Prototype management game inspired by running a Hololive-style entertainment com
 - Talents with unlock levels, contracts, assignment tasks, and talent sprites.
 - Centralized localization keys prepared for English, Spanish, and Japanese.
 
+## Scene structure
+
+- `scenes/main.tscn`: Main coordinator scene that wires gameplay systems together.
+- `scenes/world/game_world.tscn`: Top-down map, grid drawing, tile interaction, and character placement.
+- `scenes/ui/game_hud.tscn`: Management HUD, recruitment controls, time controls, and language buttons.
+- `scenes/actors/sim_character.tscn`: Reusable worker and talent character scene.
+
 ## Controls
 
 - Left click inside the map to build or designate.

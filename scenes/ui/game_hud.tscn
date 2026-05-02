@@ -1,0 +1,154 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/game_hud.gd" id="1_b7ju1"]
+
+[node name="GameHud" type="CanvasLayer"]
+script = ExtResource("1_b7ju1")
+
+[node name="Root" type="Control" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TopPanel" type="PanelContainer" parent="Root"]
+offset_left = 16.0
+offset_top = 12.0
+offset_right = 1264.0
+offset_bottom = 98.0
+
+[node name="TopMargin" type="MarginContainer" parent="Root/TopPanel"]
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 10
+
+[node name="TopRow" type="HBoxContainer" parent="Root/TopPanel/TopMargin"]
+theme_override_constants/separation = 18
+
+[node name="StatsBox" type="VBoxContainer" parent="Root/TopPanel/TopMargin/TopRow"]
+custom_minimum_size = Vector2(500, 0)
+
+[node name="StatsLabel" type="Label" parent="Root/TopPanel/TopMargin/TopRow/StatsBox"]
+
+[node name="TimeLabel" type="Label" parent="Root/TopPanel/TopMargin/TopRow/StatsBox"]
+
+[node name="RoomLabel" type="Label" parent="Root/TopPanel/TopMargin/TopRow/StatsBox"]
+
+[node name="InfoBox" type="VBoxContainer" parent="Root/TopPanel/TopMargin/TopRow"]
+custom_minimum_size = Vector2(220, 0)
+
+[node name="ModeLabel" type="Label" parent="Root/TopPanel/TopMargin/TopRow/InfoBox"]
+
+[node name="SelectedLabel" type="Label" parent="Root/TopPanel/TopMargin/TopRow/InfoBox"]
+
+[node name="InstructionsLabel" type="Label" parent="Root/TopPanel/TopMargin/TopRow"]
+custom_minimum_size = Vector2(450, 0)
+autowrap_mode = 3
+
+[node name="SidePanel" type="PanelContainer" parent="Root"]
+offset_left = 830.0
+offset_top = 112.0
+offset_right = 1264.0
+offset_bottom = 702.0
+
+[node name="SideMargin" type="MarginContainer" parent="Root/SidePanel"]
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="SideColumn" type="VBoxContainer" parent="Root/SidePanel/SideMargin"]
+theme_override_constants/separation = 10
+
+[node name="BuildSection" type="VBoxContainer" parent="Root/SidePanel/SideMargin/SideColumn"]
+theme_override_constants/separation = 6
+
+[node name="BuildTitle" type="Label" parent="Root/SidePanel/SideMargin/SideColumn/BuildSection"]
+theme_override_font_sizes/font_size = 17
+
+[node name="BuildGrid" type="GridContainer" parent="Root/SidePanel/SideMargin/SideColumn/BuildSection"]
+columns = 2
+theme_override_constants/h_separation = 6
+theme_override_constants/v_separation = 6
+
+[node name="WallButton" type="Button" parent="Root/SidePanel/SideMargin/SideColumn/BuildSection/BuildGrid"]
+
+[node name="DoorButton" type="Button" parent="Root/SidePanel/SideMargin/SideColumn/BuildSection/BuildGrid"]
+
+[node name="FloorButton" type="Button" parent="Root/SidePanel/SideMargin/SideColumn/BuildSection/BuildGrid"]
+
+[node name="EraseButton" type="Button" parent="Root/SidePanel/SideMargin/SideColumn/BuildSection/BuildGrid"]
+
+[node name="OfficeButton" type="Button" parent="Root/SidePanel/SideMargin/SideColumn/BuildSection/BuildGrid"]
+
+[node name="BathroomButton" type="Button" parent="Root/SidePanel/SideMargin/SideColumn/BuildSection/BuildGrid"]
+
+[node name="StorageButton" type="Button" parent="Root/SidePanel/SideMargin/SideColumn/BuildSection/BuildGrid"]
+
+[node name="TimeRow" type="HBoxContainer" parent="Root/SidePanel/SideMargin/SideColumn/BuildSection"]
+theme_override_constants/separation = 6
+
+[node name="PauseButton" type="Button" parent="Root/SidePanel/SideMargin/SideColumn/BuildSection/TimeRow"]
+
+[node name="SpeedButton" type="Button" parent="Root/SidePanel/SideMargin/SideColumn/BuildSection/TimeRow"]
+
+[node name="StaffSection" type="VBoxContainer" parent="Root/SidePanel/SideMargin/SideColumn"]
+theme_override_constants/separation = 6
+
+[node name="StaffTitle" type="Label" parent="Root/SidePanel/SideMargin/SideColumn/StaffSection"]
+theme_override_font_sizes/font_size = 17
+
+[node name="WorkerOfferLabel" type="Label" parent="Root/SidePanel/SideMargin/SideColumn/StaffSection"]
+autowrap_mode = 3
+
+[node name="HireWorkerButton" type="Button" parent="Root/SidePanel/SideMargin/SideColumn/StaffSection"]
+
+[node name="TalentOfferLabel" type="Label" parent="Root/SidePanel/SideMargin/SideColumn/StaffSection"]
+autowrap_mode = 3
+
+[node name="HireTalentButton" type="Button" parent="Root/SidePanel/SideMargin/SideColumn/StaffSection"]
+
+[node name="AssignmentSection" type="VBoxContainer" parent="Root/SidePanel/SideMargin/SideColumn"]
+theme_override_constants/separation = 6
+
+[node name="AssignmentTitle" type="Label" parent="Root/SidePanel/SideMargin/SideColumn/AssignmentSection"]
+theme_override_font_sizes/font_size = 17
+
+[node name="StreamButton" type="Button" parent="Root/SidePanel/SideMargin/SideColumn/AssignmentSection"]
+
+[node name="ConcertButton" type="Button" parent="Root/SidePanel/SideMargin/SideColumn/AssignmentSection"]
+
+[node name="MerchButton" type="Button" parent="Root/SidePanel/SideMargin/SideColumn/AssignmentSection"]
+
+[node name="IdleButton" type="Button" parent="Root/SidePanel/SideMargin/SideColumn/AssignmentSection"]
+
+[node name="LanguageSection" type="VBoxContainer" parent="Root/SidePanel/SideMargin/SideColumn"]
+theme_override_constants/separation = 6
+
+[node name="LanguageTitle" type="Label" parent="Root/SidePanel/SideMargin/SideColumn/LanguageSection"]
+theme_override_font_sizes/font_size = 17
+
+[node name="LanguageRow" type="HBoxContainer" parent="Root/SidePanel/SideMargin/SideColumn/LanguageSection"]
+theme_override_constants/separation = 6
+
+[node name="EnglishButton" type="Button" parent="Root/SidePanel/SideMargin/SideColumn/LanguageSection/LanguageRow"]
+text = "English"
+
+[node name="SpanishButton" type="Button" parent="Root/SidePanel/SideMargin/SideColumn/LanguageSection/LanguageRow"]
+text = "Español"
+
+[node name="JapaneseButton" type="Button" parent="Root/SidePanel/SideMargin/SideColumn/LanguageSection/LanguageRow"]
+text = "日本語"
+
+[node name="LogSection" type="VBoxContainer" parent="Root/SidePanel/SideMargin/SideColumn"]
+theme_override_constants/separation = 6
+
+[node name="LogTitle" type="Label" parent="Root/SidePanel/SideMargin/SideColumn/LogSection"]
+theme_override_font_sizes/font_size = 17
+
+[node name="LogsLabel" type="RichTextLabel" parent="Root/SidePanel/SideMargin/SideColumn/LogSection"]
+custom_minimum_size = Vector2(0, 180)
+fit_content = true
+bbcode_enabled = true
